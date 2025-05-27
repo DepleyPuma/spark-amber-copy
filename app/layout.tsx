@@ -24,7 +24,7 @@ export default function RootLayout({
 			suppressHydrationWarning={true}
 			data-lt-installed='true'
 		>
-			<body className='bg-(--bg-color)'>{children}</body>
+			<body className='bg-(--bg-color) overflow-x-hidden'>{children}</body>
 		</html>
 	);
 }
