@@ -15,7 +15,8 @@ export function Hero() {
 			<AnimatedText
 				as='h1'
 				splitBy='words'
-				className='text-6xl font-black font-recursive text-center text-(--dark-text)'
+				delay={0.5}
+				className='text-4xl md:text-6xl font-black font-recursive text-center text-(--dark-text)'
 			>
 				Generate Million-Dollar SaaS Ideas in Minutes
 			</AnimatedText>
@@ -23,6 +24,7 @@ export function Hero() {
 				as='p'
 				splitBy='lines'
 				duration={2}
+				delay={1}
 				className='mx-auto max-w-xl text-center text-xl'
 			>
 				Stuck on ideas? Spark Your Next One! Our AI unleashes killer SaaS ideas you never
@@ -60,10 +62,21 @@ export function Hero() {
 			<Button
 				initial={{ opacity: 0, scale: 0.1 }}
 				animate={{ opacity: 1, scale: [0.1, 1] }}
-				transition={{ duration: 1, ease: 'easeInOut', delay: 1.2 }}
+				transition={{ duration: 1, ease: 'easeInOut', delay: 1 }}
 			>
 				Try for free!
 			</Button>
+
+			<motion.div
+				initial={{ width: 0 }}
+				animate={{ width: '80%' }}
+				transition={{
+					duration: 0.8,
+					delay: 1,
+					ease: 'easeIn',
+				}}
+				className='absolute top-[23%] md:top-[17%] md:left-[41%] md:max-w-md h-18 bg-(--bg-pink) -rotate-2 -z-10'
+			></motion.div>
 		</section>
 	);
 }
