@@ -33,7 +33,7 @@ export function Hero() {
 
 			<motion.ul
 				initial='hidden'
-				whileInView='visible'
+				animate='visible'
 				className='list-none space-y-1.5 leading-relaxed font-normal'
 			>
 				<motion.li
