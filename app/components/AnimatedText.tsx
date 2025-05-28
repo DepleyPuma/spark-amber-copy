@@ -1,16 +1,17 @@
 'use client';
 
-import { animate, stagger } from 'motion/react';
+import { animate, stagger, useInView } from 'motion/react';
 import { splitText } from 'motion-plus';
 import { useEffect, useRef } from 'react';
 
 type AnimatedTextProps = {
 	children: React.ReactNode;
-	splitBy: 'chars' | 'words' | 'lines';
+	splitBy?: 'chars' | 'words' | 'lines';
 	className?: string;
 	as?: React.ElementType;
 	delay?: number;
 	duration?: number;
+	whileInView?: boolean;
 };
 
 export function AnimatedText({
@@ -20,10 +21,14 @@ export function AnimatedText({
 	as: Component = 'div',
 	delay = 0,
 	duration = 1,
+	whileInView = false,
 }: AnimatedTextProps) {
 	const textRef = useRef<HTMLElement>(null);
+	const isInView = useInView(textRef, { once: true });
 
 	useEffect(() => {
+		if (whileInView && !isInView) return;
+
 		document.fonts.ready.then(() => {
 			if (!textRef.current) return;
 
@@ -41,7 +46,7 @@ export function AnimatedText({
 				}
 			);
 		});
-	}, []);
+	}, [delay, duration, splitBy, whileInView, isInView]);
 
 	return (
 		<Component ref={textRef} className={className}>
