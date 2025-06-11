@@ -11,20 +11,19 @@ export function ReviewSection() {
 				splitBy='words'
 				delay={0.5}
 				whileInView
-				className='text-4xl md:text-5xl mb-5 font-black font-recursive text-center text-(--dark-text) z-10'
-			>
+				className='text-4xl md:text-5xl mb-5 font-black font-recursive text-center text-(--dark-text) z-10'>
 				See Why People Love Spark
 			</AnimatedText>
 			<motion.div
 				initial={{ width: 0 }}
-				animate={{ width: '80%' }}
+				whileInView={{ width: '80%' }}
+				viewport={{ once: true }}
 				transition={{
 					duration: 0.8,
 					delay: 1,
 					ease: 'easeIn',
 				}}
-				className='absolute top-[3.5%] md:top-[6.5%] left-[10%] md:left-[54%] md:max-w-[26%] xl:max-w-[16%] xl:left-[52%] h-18 bg-(--bg-dark-pink) rotate-2 -z-10'
-			></motion.div>
+				className='absolute top-[3.5%] md:top-[7.5%] left-[10%] md:left-[54%] md:max-w-[26%] xl:max-w-[16%] xl:left-[53%] h-18 bg-(--bg-dark-pink) rotate-2 -z-10'></motion.div>
 
 			<div className='relative grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 px-4 max-w-4xl'>
 				{reviews.map((review, i) => (
