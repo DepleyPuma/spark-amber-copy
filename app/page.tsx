@@ -19,7 +19,6 @@ export default function Home() {
 			<ReviewSection />
 			<PricingSection />
 			<div className='h-screen'></div>
-			<div className='h-screen'></div>
 		</>
 	);
 }
