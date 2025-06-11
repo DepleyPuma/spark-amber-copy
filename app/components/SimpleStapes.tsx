@@ -8,20 +8,19 @@ export function SimpleStapes() {
 				as='h1'
 				splitBy='words'
 				whileInView
-				className='text-3xl md:text-5xl font-black font-recursive text-center z-20 px-10'
-			>
+				className='text-3xl md:text-5xl font-black font-recursive text-center z-20 px-10'>
 				Generate the best SaaS ideas in 3 Simple Steps
 			</AnimatedText>
 			<motion.div
 				initial={{ width: 0 }}
 				whileInView={{ width: '80%' }}
+				viewport={{ once: true }}
 				transition={{
 					duration: 0.8,
 					delay: 1,
 					ease: 'easeIn',
 				}}
-				className='absolute top-[22%] md:top-[45%] left-[8%] md:left-[29%] md:max-w-[43%] h-18 bg-(--bg-pink) rotate-3 -z-10'
-			></motion.div>
+				className='absolute top-[22%] md:top-[45%] left-[8%] md:left-[29%] md:max-w-[43%] h-18 bg-(--bg-pink) rotate-3 -z-10'></motion.div>
 		</section>
 	);
 }
